@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Time tracking dashboard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <section class="card main">
+        <div class="info">
+          <img src="./images/image-jeremy.png" alt="" />
+          <div>
+            <p>Report for</p>
+            <h1>Jeremy Robson</h1>
+          </div>
+        </div>
+        <div class="actions">
+          <button class="active" type="button" data-timeframes="daily">Daily</button>
+          <button type="button" data-timeframes="weekly">Weekly</button>
+          <button type="button" data-timeframes="monthly">Monthly</button>
+        </div>
+      </section>
+
+      <section class="card work">
+        <div class="timeframes">
+          <div class="actions">
+            <h2 class="title">Work</h2>
+            <a href="" class="action"><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor" fill-rule="evenodd"/></svg></a>
+          </div>
+          <div class="timeframe daily active">
+            <p class="time-current"><span>5</span>hrs</p>
+            <p class="time-previous">Yesterday - <span>7</span>hrs</p>
+          </div>
+          <div class="timeframe weekly">
+            <p class="time-current"><span>32</span>hrs</p>
+            <p class="time-previous">Last Week - <span>36</span>hrs</p>
+          </div>
+          <div class="timeframe monthly">
+            <p class="time-current"><span>103</span>hrs</p>
+            <p class="time-previous">Last Month - <span>128</span>hrs</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card play">
+        <div class="timeframes">
+          <div class="actions">
+            <h2 class="title">Play</h2>
+            <a href="" class="action"><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor" fill-rule="evenodd"/></svg></a>
+          </div>
+          <div class="timeframe daily active">
+            <p class="time-current"><span>1</span>hrs</p>
+            <p class="time-previous">Yesterday - <span>2</span>hrs</p>
+          </div>
+          <div class="timeframe weekly">
+            <p class="time-current"><span>10</span>hrs</p>
+            <p class="time-previous">Last Week - <span>8</span>hrs</p>
+          </div>
+          <div class="timeframe monthly">
+            <p class="time-current"><span>23</span>hrs</p>
+            <p class="time-previous">Last Month - <span>29</span>hrs</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card study">
+        <div class="timeframes">
+          <div class="actions">
+            <h2 class="title">Study</h2>
+            <a href="" class="action"><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor" fill-rule="evenodd"/></svg></a>
+          </div>
+          <div class="timeframe daily active">
+            <p class="time-current"><span>0</span>hrs</p>
+            <p class="time-previous">Yesterday - <span>1</span>hrs</p>
+          </div>
+          <div class="timeframe weekly">
+            <p class="time-current"><span>4</span>hrs</p>
+            <p class="time-previous">Last Week - <span>7</span>hrs</p>
+          </div>
+          <div class="timeframe monthly">
+            <p class="time-current"><span>13</span>hrs</p>
+            <p class="time-previous">Last Month - <span>19</span>hrs</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card exercise">
+        <div class="timeframes">
+          <div class="actions">
+            <h2 class="title">Exercise</h2>
+            <a href="" class="action"><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor" fill-rule="evenodd"/></svg></a>
+          </div>
+          <div class="timeframe daily active">
+            <p class="time-current"><span>1</span>hrs</p>
+            <p class="time-previous">Yesterday - <span>1</span>hrs</p>
+          </div>
+          <div class="timeframe weekly">
+            <p class="time-current"><span>4</span>hrs</p>
+            <p class="time-previous">Last Week - <span>5</span>hrs</p>
+          </div>
+          <div class="timeframe monthly">
+            <p class="time-current"><span>11</span>hrs</p>
+            <p class="time-previous">Last Month - <span>18</span>hrs</p>
+          </div>
+        </div>
+      </section>
+      <section class="card social">
+        <div class="timeframes">
+          <div class="actions">
+            <h2 class="title">Social</h2>
+            <a href="" class="action"><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor" fill-rule="evenodd"/></svg></a>
+          </div>
+          <div class="timeframe daily active">
+            <p class="time-current"><span>1</span>hrs</p>
+            <p class="time-previous">Yesterday - <span>3</span>hrs</p>
+          </div>
+          <div class="timeframe weekly">
+            <p class="time-current"><span>5</span>hrs</p>
+            <p class="time-previous">Last Week - <span>10</span>hrs</p>
+          </div>
+          <div class="timeframe monthly">
+            <p class="time-current"><span>21</span>hrs</p>
+            <p class="time-previous">Last Month - <span>23</span>hrs</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="card self">
+        <div class="timeframes">
+          <div class="actions">
+            <h2 class="title">Self Care</h2>
+            <a href="" class="action"><svg width="21" height="5" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Zm8 0a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5Z" fill="currentColor" fill-rule="evenodd"/></svg></a>
+          </div>
+          <div class="timeframe daily active">
+            <p class="time-current"><span>0</span>hrs</p>
+            <p class="time-previous">Yesterday - <span>1</span>hrs</p>
+          </div>
+          <div class="timeframe weekly">
+            <p class="time-current"><span>2</span>hrs</p>
+            <p class="time-previous">Last Week - <span>2</span>hrs</p>
+          </div>
+          <div class="timeframe monthly">
+            <p class="time-current"><span>7</span>hrs</p>
+            <p class="time-previous">Last Month - <span>11</span>hrs</p>
+          </div>
+        </div>
+      </section>
+    </div>
+  
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">yayest</a>.
+    </div>
+    <script src="./main.js"></script>
+  </body>
+</html>

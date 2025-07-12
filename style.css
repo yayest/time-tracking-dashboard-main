@@ -1,0 +1,337 @@
+:root {
+  --clr-primary-600: hsl(246, 80%, 60%);
+  --clr-primary-work-300: hsl(15, 100%, 70%);
+  --clr-primary-play-300: hsl(195, 74%, 62%);
+  --clr-primary-study-400: hsl(348, 100%, 68%);
+  --clr-primary-exercise-400: hsl(145, 58%, 55%);
+  --clr-primary-social-700: hsl(264, 64%, 52%);
+  --clr-primary-self-care-300: hsl(43, 84%, 65%);
+
+  --clr-neutral-950: hsl(226, 43%, 10%);
+  --clr-neutral-900: hsl(235, 46%, 20%);
+  --clr-neutral-500: hsl(235, 45%, 61%);
+  --clr-neutral-200: hsl(236, 100%, 87%);
+
+  --fs-s: 1;
+  --fs-m: 1.125rem;
+  --fs-l: 1.5rem;
+  --fs-x: 2rem;
+}
+
+@layer reset, base, layout;
+
+@layer reset {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    font: inherit;
+  }
+
+  html {
+    color-scheme: dark light;
+    hanging-punctuation: first last;
+  }
+
+  body {
+    min-height: 100svh;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-wrap: balance;
+  }
+
+  p,
+  li,
+  figcaption {
+    text-wrap: pretty;
+    max-width: 65ch;
+  }
+
+  header,
+  footer,
+  main,
+  section,
+  article {
+    container-type: inline-size;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 0.75rem;
+  }
+}
+
+@layer base {
+  html {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    line-height: 1.4;
+  }
+
+  body {
+    margin-block: 3em;
+    background: var(--clr-neutral-950);
+  }
+
+  h1,
+  h2,
+  p,
+  button,
+  a {
+    font-size: var(--fz, var(--fs-s));
+    color: var(--clr, #fff);
+    text-align: var(--horizontal-alignment);
+    font-weight: var(--fw);
+  }
+}
+
+@layer layout {
+  .dashboard {
+    display: grid;
+    max-inline-size: 90rem;
+    margin-inline: auto;
+    grid-template-columns: 1.5em 1fr 1.5em;
+    gap: 1.5em;
+
+    grid-template-areas:
+      ". main ."
+      ". work ."
+      ". play ."
+      ". study ."
+      ". exercise ."
+      ". social ."
+      ". self .";
+
+    @media (width > 45em) {
+      grid-template-columns: 1.5em repeat(2, 1fr) 1.5em;
+      grid-template-areas:
+        ". main work ."
+        ". main play."
+        ". study exercise ."
+        ". social self .";
+    }
+
+    @media (width > 60em) {
+      grid-template-columns: 1.5em repeat(4, 1fr) 1.5em;
+      grid-template-areas:
+        ". main work play study ."
+        ". main exercise social self .";
+    }
+  }
+
+  section {
+    border-radius: 1em 1em 1.4em 1.4em;
+  }
+
+  .card {
+    background-image: var(--bg-i);
+    background-color: var(--bg-c);
+    background-repeat: no-repeat;
+    background-position: 98% -10px;
+    padding-block-start: 2em;
+    @media (width > 60em) {
+      padding-block-start: 3em;
+    }
+
+    img {
+      border: 3px solid #fff;
+      border-radius: 50%;
+      max-width: 75px;
+    }
+  }
+
+  .timeframes {
+    background: var(--clr-neutral-900);
+    border-radius: 1em;
+    padding: 1.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+
+    &:hover {
+      background: #34397b;
+    }
+  }
+
+  .actions {
+    grid-column: 1 / 3;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .action {
+    --clr: var(--clr-neutral-200);
+    display: flex;
+    height: 1em;
+    align-items: center;
+    justify-content: end;
+    &:hover {
+      --clr: #fff;
+    }
+  }
+
+  .title {
+    --fz: var(--fs-m);
+    --fw: 500;
+  }
+
+  .time-current {
+    --fz: var(--fs-x);
+    --fw: 300;
+    @media (width > 60em) {
+      --fz: 3.2rem;
+      margin-block-start: 0.2em;
+    }
+  }
+
+  .time-previous {
+    --fz: var(--fs-s);
+    --clr: var(--clr-neutral-200);
+    --horizontal-alignment: end;
+  }
+
+  .timeframe {
+    display: none;
+  }
+
+  .timeframe.active {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-column: 1 / 3;
+    align-items: center;
+    @media (width > 60em) {
+      grid-template-columns: 1fr;
+
+      .time-previous {
+        --horizontal-alignment: start;
+      }
+    }
+  }
+
+  .main {
+    grid-area: main;
+    --bg-c: var(--clr-neutral-900);
+    padding-block-start: 0;
+    border-radius: 1em;
+
+    .info {
+      background: var(--clr-primary-600);
+      border-radius: 1em;
+      display: grid;
+      grid-template-columns: min-content 1fr;
+      gap: 1.5em;
+      padding: 1.5em;
+      align-items: center;
+
+      @media (width > 60em) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .actions {
+      padding: 1em;
+
+      @media (width > 45em) {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      .active {
+        --clr: #fff;
+      }
+    }
+
+    button {
+      --clr: var(--clr-neutral-200);
+      --fz: var(--fs-m);
+      background: none;
+      border: 0;
+      cursor: pointer;
+      padding: 0.5em;
+      border-radius: 1em;
+      &:hover,
+      &:focus-visible {
+        --clr: #fff;
+      }
+      &:focus-visible {
+        outline: 2px solid;
+      }
+    }
+
+    p {
+      --clr: var(--clr-neutral-200);
+    }
+
+    h1 {
+      --fz: var(--fs-l);
+      --fw: 300;
+
+      @media (width > 60em) {
+        --fz: var(--fs-x);
+        margin-block-end: 1.5em;
+      }
+    }
+  }
+
+  .work {
+    grid-area: work;
+    --bg-i: url(./images/icon-work.svg);
+    --bg-c: var(--clr-primary-work-300);
+  }
+
+  .play {
+    grid-area: play;
+    --bg-i: url(./images/icon-play.svg);
+    --bg-c: var(--clr-primary-play-300);
+  }
+
+  .study {
+    grid-area: study;
+    --bg-i: url(./images/icon-study.svg);
+    --bg-c: var(--clr-primary-study-400);
+  }
+
+  .exercise {
+    grid-area: exercise;
+    --bg-i: url(./images/icon-exercise.svg);
+    --bg-c: var(--clr-primary-exercise-400);
+  }
+
+  .social {
+    grid-area: social;
+    --bg-i: url(./images/icon-social.svg);
+    --bg-c: var(--clr-primary-social-700);
+  }
+
+  .self {
+    grid-area: self;
+    --bg-i: url(./images/icon-self-care.svg);
+    --bg-c: var(--clr-primary-self-care-300);
+  }
+
+  .attribution {
+    margin-block: 2em;
+    font-size: 11px;
+    text-align: center;
+    a {
+      color: var(--clr-neutral-200);
+    }
+  }
+}

@@ -126,7 +126,3 @@ I think we need to understand css grid in more detail, the correct use of media 
 - Website - [yayest](https://github.com/yayest/)
 - Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
 
-
-
-# time-tracking-dashboard-main
-# time-tracking-dashboard-main
