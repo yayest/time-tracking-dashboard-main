@@ -87,13 +87,13 @@ I enjoyed working with CSS Grid, I think my solution is not very optimal. I'm no
   }
 ```
 ```js
-const actions = document.querySelectorAll("button");
+const actions = document.querySelectorAll("button[data-timeframes]");
 const timeframes = document.querySelectorAll(".timeframe");
 
 actions.forEach((element) => {
   element.addEventListener(
     "click",
-    (event) => {
+    () => {
       actions.forEach((button) => {
         button.classList.remove("active");
       });
@@ -124,5 +124,4 @@ I think we need to understand css grid in more detail, the correct use of media 
 ## Author
 
 - Website - [yayest](https://github.com/yayest/)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
 

@@ -85,7 +85,7 @@
   }
 
   body {
-    margin-block: 3em;
+    place-content: center;
     background: var(--clr-neutral-950);
   }
 
@@ -102,10 +102,17 @@
 }
 
 @layer layout {
+  @media (max-width: 375px) {
+    html {
+      font-size: 14px;
+    }
+  }
+
   .dashboard {
     display: grid;
     max-inline-size: 90rem;
     margin-inline: auto;
+    place-content: center;
     grid-template-columns: 1.5em 1fr 1.5em;
     gap: 1.5em;
 
@@ -118,7 +125,7 @@
       ". social ."
       ". self .";
 
-    @media (width > 45em) {
+    @media (min-width: 45em) {
       grid-template-columns: 1.5em repeat(2, 1fr) 1.5em;
       grid-template-areas:
         ". main work ."
@@ -136,7 +143,10 @@
   }
 
   section {
-    border-radius: 1em 1em 1.4em 1.4em;
+    border-start-start-radius: 1em;
+    border-start-end-radius: 1em;
+    border-end-start-radius: 1.4em;
+    border-end-end-radius: 1.4em;
   }
 
   .card {
@@ -152,7 +162,7 @@
     img {
       border: 3px solid #fff;
       border-radius: 50%;
-      max-width: 75px;
+      max-width: 4.6875rem;
     }
   }
 
@@ -182,6 +192,9 @@
     height: 1em;
     align-items: center;
     justify-content: end;
+    background: transparent;
+    border: 0;
+    outline-offset: .5em;
     &:hover {
       --clr: #fff;
     }
@@ -328,7 +341,7 @@
 
   .attribution {
     margin-block: 2em;
-    font-size: 11px;
+    font-size: .6875em;
     text-align: center;
     a {
       color: var(--clr-neutral-200);
